@@ -40,7 +40,7 @@ var AppRouter = Backbone.Router.extend({
 
   loading: function() {
     var router = this;
-    $('.buttons').html('Loading...');
+    $('.buttons').html('<h2>Loading...</h2>');
     setTimeout(function(){
       router.navigate('main', {trigger: true});
     }, 4000);
@@ -68,7 +68,7 @@ var AppRouter = Backbone.Router.extend({
     $('.buttons').html('');
     //append an img to the buttons container after it's cleared
     var displayGame = function(){
-      $('.buttons').append('<img src="http://gamesdbase.com/Media/SYSTEM/Nintendo_SNES/Title/big/Super_Mario_World_-_1991_-_Nintendo.jpg" />')
+      $('.buttons').append('<h1>GAME ON!</h1><a class="player">1 Player</a><a class="player">2 Players</a><a class="player">3 Players</a><a class="home" href="#main">Home</a>')
     }
     displayGame();
   },
@@ -79,7 +79,8 @@ var AppRouter = Backbone.Router.extend({
     $('.buttons').html('');
     $('.buttons').append('<h2>Super Players</h2>');
     $('.buttons').append(
-    '<ul><li>Peter</li><li>Jeffrey</li></ul>');
+    '<ul><li>Peter - 1458</li><li>Jeffrey - 1296</li><li>Mary Ellen - 846</li></ul>');
+    $('.buttons').append('<a class="home" href="#main">Home</a>');
   },
 
   settings: function(){
@@ -91,6 +92,7 @@ var AppRouter = Backbone.Router.extend({
       $('.buttons').append('<p>Mode: Normal</p>');
       $('.buttons').append('<p>Music: On</p>');
       $('.buttons').append('<p>Level: 5</p>');
+      $('.buttons').append('<a class="home" href="#main">Home</a>');
   }
 }); // END of AppRouter
 
